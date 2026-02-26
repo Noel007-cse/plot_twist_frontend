@@ -23,7 +23,7 @@ export default function LoginScreen({ onLoginSuccess }) {
     setError("")
 
     const endpoint = isSignup ? "/signup" : "/login"
-    const url = `http://localhost:3001${endpoint}`
+    const url = `https://plot-twist-backend.onrender.com${endpoint}`
 
     try {
       const response = await fetch(url, {
