@@ -39,7 +39,7 @@ export default function InterestsScreen({ userId, email, onInterestsSet }) {
     setLoading(true)
 
     try {
-      const response = await fetch("http://localhost:3001/update-interests", {
+      const response = await fetch("https://plot-twist-backend.onrender.com/update-interests", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
