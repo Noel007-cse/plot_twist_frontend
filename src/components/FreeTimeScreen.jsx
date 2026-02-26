@@ -27,12 +27,12 @@ export default function FreeTimeScreen({ userId, token, isMobile }) {
 
     try {
       const response = await fetch(
-        `http://localhost:3001/suggest?minutes=${minutes}&energy=${energy}&userId=${userId}`
+        `https://plot-twist-backend.onrender.com/suggest?minutes=${minutes}&energy=${energy}&userId=${userId}`
       )
       const data = await response.json()
 
       setSuggestion(data.suggestion)
-      const historyResponse = await fetch(`http://localhost:3001/history?userId=${userId}`)
+      const historyResponse = await fetch(`https://plot-twist-backend.onrender.com/history?userId=${userId}`)
       const historyData = await historyResponse.json()
       setHistory(historyData)
     } catch (error) {
@@ -45,7 +45,7 @@ export default function FreeTimeScreen({ userId, token, isMobile }) {
   useEffect(() => {
     const loadHistory = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/history?userId=${userId}`)
+        const response = await fetch(`https://plot-twist-backend.onrender.com/history?userId=${userId}`)
         const data = await response.json()
         setHistory(data)
       } catch (error) {
